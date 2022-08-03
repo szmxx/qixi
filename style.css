@@ -1,0 +1,121 @@
+.love-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rectangle-wrapper {
+  position: relative;
+  display: block;
+}
+.rectangle {
+  position: relative;
+  width: 320px;
+  height: 180px;
+}
+.rectangle::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  z-index: 1;
+  border-top: 80px solid #d3eafd;
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+  transform-origin: top;
+  transition: all 0.5s ease-in-out 0.5s;
+}
+.animation .rectangle::before {
+  transform: rotateX(180deg);
+}
+.rectangle::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  border-top: 80px solid transparent;
+  border-left: 160px solid #b4d2ee;
+  border-right: 160px solid #b4d2ee;
+  border-bottom: 100px solid #b4d2ee;
+  z-index: 5;
+}
+.card {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  width: 60%;
+  height: 90%;
+  left: 0;
+  right: 0;
+  transition: all 1s ease-in-out;
+  background: #fff;
+  z-index: -1;
+  box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+}
+.card .close {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  transform: rotate(45deg);
+  line-height: 1em;
+  font-weight: 1000;
+  font-size: 16px;
+  cursor: pointer;
+}
+.card div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  padding: 0 16px;
+  flex-direction: column;
+}
+.card div p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 24px;
+}
+.card > div > p:first-child {
+  align-self: flex-start;
+}
+.animation .card {
+  bottom: 100px;
+  transform: scale(1.5);
+  transition-delay: 0.8s;
+  z-index: 4;
+}
+
+.rectangle-love {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  background: #c51803;
+  transform: translate(-50%, -100%) rotate(45deg);
+  box-shadow: 0 1px 6px rgb(0 0 0 / 60%);
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out 0.7s;
+  z-index: 10;
+}
+.animation .rectangle-love {
+  transform: rotate(90deg) translate(-50%);
+  transition-delay: 0.4s;
+}
+.rectangle-love::before {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #c51803;
+  top: -12px;
+}
+.rectangle-love::after {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #c51803;
+  left: -12px;
+  top: 0px;
+}

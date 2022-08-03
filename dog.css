@@ -1,0 +1,426 @@
+:root {
+  --main-color: #f79e38;
+  --prime-color: #e99036;
+  --red-color: #e64356;
+  --index-dog: 0;
+  --index-body: 3;
+  --index-head: 4;
+  --index-tail: 2;
+  --index-legs: 2;
+  --index-cheast: 4;
+  --index-hair: 2;
+  --index-face: 6;
+  --index-mouth: 6;
+  --index-eyes: 6;
+  --index-years: 1;
+  --index-nose: 7;
+}
+
+.dog {
+  position: absolute;
+  bottom: -24px;
+  right: 32px;
+  width: 50vmin;
+  height: 40vmin;
+  z-index: var(--index-dog);
+}
+.heart {
+  position: absolute;
+  width: 6%;
+  height: 7%;
+  background-color: var(--red-color);
+  border-bottom-right-radius: 23%;
+  opacity: 0;
+  animation-fill-mode: both;
+}
+.heart--1 {
+  top: -25%;
+  left: 15%;
+  animation: heart-beat 2s ease-out infinite 1.5s;
+}
+.heart--2 {
+  top: -36%;
+  left: 7%;
+  animation: heart-beat 2s ease-out infinite 1s;
+}
+.heart--3 {
+  top: -48%;
+  left: 14%;
+  animation: heart-beat 2s ease-out infinite 0.5s;
+}
+.heart--4 {
+  top: -53%;
+  left: -3%;
+  animation: heart-beat 2s ease-out infinite;
+}
+.heart:before,
+.heart:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  border-radius: 50%;
+  background-color: var(--red-color);
+}
+.heart:after {
+  bottom: 0px;
+  left: -53%;
+}
+.heart:before {
+  top: -53%;
+  right: 0px;
+  transform: rotate(45deg);
+}
+.body {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background-color: var(--main-color);
+  border-top-right-radius: 17% 40%;
+  border-top-left-radius: 25%;
+  border-bottom-right-radius: 5% 13%;
+  border-bottom-left-radius: 30% 40%;
+  z-index: var(--index-body);
+}
+.cheast {
+  position: absolute;
+  width: 45%;
+  height: 100%;
+  background-color: #fff;
+  border-top-right-radius: 17% 40%;
+  border-top-left-radius: 25%;
+  border-bottom-right-radius: 40% 40%;
+  border-bottom-left-radius: 40% 40%;
+  z-index: var(--index-cheast);
+}
+.cheast::before,
+.cheast::after {
+  position: absolute;
+  content: "";
+  width: 7%;
+  height: 55%;
+  border-radius: 39%;
+  background-color: #fff;
+}
+.cheast::before {
+  top: 19%;
+  left: -4%;
+}
+.cheast::after {
+  top: 36%;
+  left: 3%;
+  transform: rotate(-1deg);
+}
+.head {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: var(--index-head);
+  animation: dog-head 1s ease-out infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+.tail {
+  position: absolute;
+  top: -14%;
+  left: 92%;
+  width: 10%;
+  height: 45%;
+  background-color: var(--main-color);
+  border-top-right-radius: 30% 30%;
+  border-top-left-radius: 40% 30%;
+  border-bottom-right-radius: 30% 40%;
+  border-bottom-left-radius: 40% 40%;
+  z-index: var(--index-tail);
+  transform: rotate(20deg);
+  animation: dog-tail 170ms ease-out infinite;
+}
+.tail::before {
+  position: absolute;
+  content: "";
+  top: -8%;
+  left: -7%;
+  width: 100%;
+  height: 50%;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  animation: dog-tail-before 160ms ease-out infinite;
+}
+.legs {
+  position: absolute;
+  top: 97%;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  z-index: var(--index-legs);
+  animation: dog-legs 1s ease-out infinite 1.5s;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+.legs__front,
+.legs__back {
+  width: 10%;
+  height: 100%;
+  background-color: var(--main-color);
+  position: absolute;
+  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+}
+.legs__front::after,
+.legs__back::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 49%;
+  background-color: #fff;
+  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+}
+.legs__front--left {
+  left: 38%;
+  transform: rotate(1deg);
+}
+.legs__front--right {
+  left: 20%;
+  transform: rotate(-4deg);
+}
+
+.legs__back--left {
+  left: 69%;
+  transform: rotate(-7deg);
+}
+.legs__back--right {
+  left: 85%;
+  transform: rotate(2deg);
+}
+.face {
+  height: 40%;
+  width: 42%;
+  position: absolute;
+  top: -13%;
+  left: -3%;
+  background-color: #fff;
+  border-top-right-radius: 45% 50%;
+  border-top-left-radius: 35% 50%;
+  border-bottom-left-radius: 35% 21%;
+  z-index: var(--index-face);
+}
+.face::before,
+.face::after {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+}
+.face::before {
+  width: 55%;
+  left: 42%;
+  top: 0%;
+  height: 35%;
+  border-radius: 23% 7% 16% 12%;
+  transform: rotate(0deg) scaleX(-1);
+}
+.face::after {
+  width: 27%;
+  left: 7%;
+  height: 23%;
+  border-top-right-radius: 100% 100%;
+  border-bottom-left-radius: 49% 100%;
+  transform: rotate(-64deg);
+  top: -1%;
+  border-top-left-radius: 0% -20%;
+  border-bottom-right-radius: 52% 0%;
+  box-shadow: rgba(0, 0, 0, 0.1) 2px -6px 11px 1px;
+}
+.eye {
+  width: 6%;
+  height: 6%;
+  position: absolute;
+  border-radius: 100%;
+  top: 24%;
+  background-color: #000;
+  z-index: var(--index-eyes);
+  animation: dog-eye 200ms * 9 infinite;
+}
+.eye--left {
+  left: 27%;
+}
+.eye--right {
+  left: 46%;
+}
+.mouth {
+  background-color: transparent;
+  border-color: #000;
+  width: 44%;
+  border-style: solid;
+  border-width: 0.7vmin;
+  height: 48%;
+  z-index: var(--index-mouth);
+  position: absolute;
+  bottom: 35%;
+  left: 14%;
+  border-top-color: transparent;
+  border-bottom-left-radius: 72% 100%;
+  border-bottom-right-radius: 77% 100%;
+  border-right-color: transparent;
+  border-top-right-radius: 50%;
+  border-left-color: transparent;
+  transform: rotate(-41deg);
+}
+.year {
+  position: absolute;
+}
+.year--left {
+  top: -40%;
+  left: 3%;
+  height: 47%;
+  width: 19%;
+  z-index: var(--index-years);
+  background-color: var(--prime-color);
+  border-top-left-radius: 68% 100%;
+  border-top-right-radius: 100% 100%;
+  transform-origin: bottom center;
+  animation: left-year 1000ms ease-out infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+.year--right {
+  top: -39%;
+  left: 19%;
+  height: 38%;
+  width: 18%;
+  z-index: var(--index-years);
+  background-color: var(--main-color);
+  border-top-left-radius: 56% 100%;
+  border-top-right-radius: 100% 100%;
+  transform-origin: bottom center;
+  border-bottom-right-radius: 14% 38%;
+  animation: right-year 1000ms ease-out infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+.nose {
+  position: absolute;
+  width: 24%;
+  height: 24%;
+  background-color: #fff;
+  z-index: var(--index-nose);
+  left: -12%;
+  top: -3%;
+  border-bottom-left-radius: 50% 88%;
+  border-top-left-radius: 11% 43%;
+  transform: rotate(12deg);
+}
+
+.nose::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 55%;
+  background-color: #000;
+  border-radius: 100%;
+  left: -7%;
+  top: -18%;
+}
+
+@keyframes right-year {
+  from {
+    transform: rotate(-331deg);
+  }
+  25% {
+    transform: rotate(-320deg);
+  }
+  50% {
+    transform: rotate(-331deg);
+  }
+  to {
+    transform: rotate(-320deg);
+  }
+}
+
+@keyframes heart-beat {
+  0% {
+    transform: scale(0.75) rotate(35deg);
+    opacity: 1;
+  }
+  5%,
+  15%,
+  25% {
+    transform: scale(1) rotate(35deg);
+  }
+  10%,
+  20% {
+    transform: scale(0.75) rotate(35deg);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(35deg) translateY(-10px) translateX(-10px);
+    opacity: 0;
+  }
+}
+
+@keyframes left-year {
+  from {
+    transform: rotate(-26deg);
+  }
+  25% {
+    transform: rotate(-35deg);
+  }
+  50% {
+    transform: rotate(-26deg);
+  }
+  to {
+    transform: rotate(-40deg);
+  }
+}
+
+@keyframes dog-eye {
+  from,
+  to {
+    animation-timing-function: step-end;
+    opacity: 1;
+  }
+  50%,
+  55% {
+    animation-timing-function: step-start;
+    opacity: 0;
+  }
+}
+
+@keyframes dog-head {
+  to {
+    transform: translateX(-3px) rotate(3deg);
+  }
+}
+
+@keyframes dog-tail {
+  from,
+  to {
+    transform: rotate(10deg);
+  }
+  50%,
+  60% {
+    transform: rotate(70deg) translateX(10px) translateY(2px);
+  }
+}
+
+@keyframes dog-tail-before {
+  from,
+  to {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+}
+
+@keyframes dog-legs {
+  from {
+    transform: translateY(-1px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
