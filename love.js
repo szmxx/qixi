@@ -76,6 +76,10 @@ document.onmousedown = pucker;
 document.onmouseup = function () {
   clearTimeout(kiss);
 };
+document.touchstart = pucker;
+document.touchend = function () {
+  clearTimeout(kiss);
+};
 
 function pucker() {
   ox = -1;
