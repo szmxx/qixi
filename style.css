@@ -7,6 +7,7 @@
 .rectangle-wrapper {
   position: relative;
   display: block;
+  margin-top: -20vh;
 }
 .rectangle {
   position: relative;
