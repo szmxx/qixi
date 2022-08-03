@@ -76,10 +76,10 @@ document.onmousedown = pucker;
 document.onmouseup = function () {
   clearTimeout(kiss);
 };
-document.touchstart = pucker;
-document.touchend = function () {
+document.addEventListener("touchstart", pucker);
+document.addEventListener("touchend", () => {
   clearTimeout(kiss);
-};
+});
 
 function pucker() {
   ox = -1;
@@ -121,6 +121,7 @@ function break_my_heart(i) {
 }
 
 document.onmousemove = mouse;
+document.addEventListener("touchmove", mouse);
 function mouse(e) {
   if (e) {
     y = e.pageY;
